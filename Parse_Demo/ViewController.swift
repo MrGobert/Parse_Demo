@@ -30,9 +30,9 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
         
         Parse.initializeWithConfiguration(ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
-            configuration.server = "https://parse-demo-app.herokuapp.com/parse"
-            configuration.applicationId = "JAMES_APPID"
-            configuration.clientKey = "MASTER_UNLOCK_KEY"
+            configuration.server = "YOUR_SERVER_ADDRESS"
+            configuration.applicationId = "YOUR_APPID"
+            configuration.clientKey = "YOUR_CLIENT_KEY"
         }))
         
    
