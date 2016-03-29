@@ -19,14 +19,14 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         
-        if let pUserName = PFUser.currentUser()?["username"] as? String {
-            self.activeUserName.text = "Hello @\(pUserName)!"
-        }
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+       if let pUserName = PFUser.currentUser()?["username"] as? String {
+            self.activeUserName.text = "Hello @\(pUserName)!"
+        }
+
         
         if (PFUser.currentUser() == nil) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

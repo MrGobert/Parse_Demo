@@ -34,6 +34,7 @@
 		1ABE6C281CA4DA0B000C51E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABE6C251CA4DA0B000C51E2 /* Bolts.framework */; };
 		1ABE6C291CA4DA0B000C51E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABE6C261CA4DA0B000C51E2 /* Parse.framework */; };
 		1ABE6C2A1CA4DA0B000C51E2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABE6C271CA4DA0B000C51E2 /* ParseUI.framework */; };
+		1AD1C07E1CAA6071004D89D2 /* DetailUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1C07D1CAA6071004D89D2 /* DetailUserVC.swift */; };
 		FCE34D6EC75EA04EDFD7EAC0 /* Pods_Parse_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2085D863935812158E4537CD /* Pods_Parse_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		1ABE6C251CA4DA0B000C51E2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1ABE6C261CA4DA0B000C51E2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1ABE6C271CA4DA0B000C51E2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		1AD1C07D1CAA6071004D89D2 /* DetailUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailUserVC.swift; sourceTree = "<group>"; };
 		2085D863935812158E4537CD /* Pods_Parse_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parse_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D3A98746BF7D4085B4403C /* Pods-Parse_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse_Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parse_Demo/Pods-Parse_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		E5D603A09801F9B3D0F37269 /* Pods-Parse_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parse_Demo/Pods-Parse_Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +143,7 @@
 				1A04A9F91CA5CEEB00985F0C /* CustomLogInVC.swift */,
 				1A04A9FB1CA5CF0D00985F0C /* CustomSignUpVC.swift */,
 				1A04A9FD1CA6092C00985F0C /* MainVC.swift */,
-				1A04AA011CA6153500985F0C /* CustomButton.swift */,
+				1AD1C07D1CAA6071004D89D2 /* DetailUserVC.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -151,6 +153,7 @@
 			children = (
 				1A04AA131CA8848300985F0C /* CustomTableView.swift */,
 				1A04AA151CA8849800985F0C /* CustomCell.swift */,
+				1A04AA011CA6153500985F0C /* CustomButton.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				1A04A9FC1CA5CF0D00985F0C /* CustomSignUpVC.swift in Sources */,
 				1A04A9FA1CA5CEEB00985F0C /* CustomLogInVC.swift in Sources */,
 				1A04AA141CA8848300985F0C /* CustomTableView.swift in Sources */,
+				1AD1C07E1CAA6071004D89D2 /* DetailUserVC.swift in Sources */,
 				1A01B3581CA4C7CF00C81525 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -465,6 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

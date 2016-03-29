@@ -30,35 +30,40 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
         
         Parse.initializeWithConfiguration(ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
-            configuration.server = "YOUR_SERVER_ADDRESS"
-            configuration.applicationId = "YOUR_APPID"
-            configuration.clientKey = "YOUR_CLIENT_KEY"
+            configuration.server = "Your_Server_Address"
+            configuration.applicationId = "Your_APPID"
+            configuration.clientKey = "Your_Client_KEY"
         }))
         
    
   }
     
+    override func viewWillAppear(animated: Bool) {
+         self.animationEngine.animateOnScreen(1)
+    }
+    
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.animationEngine.animateOnScreen(1)
         
         if (PFUser.currentUser() == nil) {
             self.longInViewController.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton]
             
-            let logInLogoTitle = UILabel()
-            logInLogoTitle.text = "Mobile First Studios"
+//            let logInLogoTitle = UILabel()
+//            logInLogoTitle.text = "Mobile First Studios"
             
-            self.longInViewController.logInView!.logo = logInLogoTitle
+//            let longinLogoImage = UIImageView()
+//            longinLogoImage.image = UIImage(named: "default_logo")
+//            self.longInViewController.logInView!.logo = longinLogoImage
             
             self.longInViewController.delegate = self
             
-            let signUpLogoTitle = UILabel()
-            signUpLogoTitle.text = "Mobile First Studios"
-            
-            self.signUpViewController.signUpView!.logo = signUpLogoTitle
-            self.signUpViewController.delegate = self
-            self.longInViewController.signUpController = self.signUpViewController
+//            let signUpLogoTitle = UILabel()
+//            signUpLogoTitle.text = "Mobile First Studios"
+//            
+//            self.signUpViewController.signUpView!.logo = signUpLogoTitle
+//            self.signUpViewController.delegate = self
+//            self.longInViewController.signUpController = self.signUpViewController
             
             
         } else {
@@ -72,7 +77,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         // Dispose of any resources that can be recreated.
     }
     
-    //Parse Login
+    //Standard Parse Login
 
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
@@ -86,6 +91,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         self.dismissViewControllerAnimated(true, completion: nil)
+
     }
 
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
@@ -98,7 +104,15 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        if ((PFUser.currentUser()?.authenticated) != nil) {
+            
+            performSegueWithIdentifier("signedin", sender: ViewController())
+            
+        }
+        
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {

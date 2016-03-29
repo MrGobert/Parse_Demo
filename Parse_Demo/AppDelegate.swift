@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
             
             ParseMutableClientConfiguration.applicationId = "Your_APPID"
-            ParseMutableClientConfiguration.clientKey = "Your_Client_Key"
-            ParseMutableClientConfiguration.server = "Your_Sever_Address"
+            ParseMutableClientConfiguration.clientKey = "Your_Client_KEY"
+            ParseMutableClientConfiguration.server = "Your_Server_Address"
             
         
         })

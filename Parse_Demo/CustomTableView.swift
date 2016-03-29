@@ -13,6 +13,7 @@ class CustomTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     var userArray: NSMutableArray = []
+    let detailSegueIdentifier = "showDetail"
     
     @IBOutlet weak var tableview: UITableView!
 
@@ -29,6 +30,23 @@ class CustomTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == detailSegueIdentifier {
+            if let destination = segue.destinationViewController as? DetailUserVC {
+                if let userIndex = tableview.indexPathForSelectedRow?.row {
+                    let object = userArray[userIndex] as! PFObject
+                    let name = object["username"] as! String
+                    destination.userName = name
+                    
+                   let emailString = userArray[userIndex] as! PFObject
+                    let email = emailString["email"] as! String
+                    destination.userEmail = email
+                }
+            }
+        }
+    }
+
     
 
     func loadParseData() {
@@ -77,5 +95,12 @@ class CustomTableView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         return cell
     }
-
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableview.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        print(userArray[row])
+    }
+   
 }
