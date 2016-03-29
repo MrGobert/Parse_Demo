@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				1A01B35B1CA4C7CF00C81525 /* Main.storyboard */,
-				1A04AA131CA8848300985F0C /* CustomTableView.swift */,
+				1A01B3591CA4C7CF00C81525 /* ViewController.swift */,
 				1A04A9F91CA5CEEB00985F0C /* CustomLogInVC.swift */,
 				1A04A9FB1CA5CF0D00985F0C /* CustomSignUpVC.swift */,
 				1A04A9FD1CA6092C00985F0C /* MainVC.swift */,
@@ -149,7 +149,7 @@
 		1A04AA001CA614E400985F0C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1A01B3591CA4C7CF00C81525 /* ViewController.swift */,
+				1A04AA131CA8848300985F0C /* CustomTableView.swift */,
 				1A04AA151CA8849800985F0C /* CustomCell.swift */,
 			);
 			name = Controller;
